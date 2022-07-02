@@ -1,4 +1,4 @@
-/*
+package everyday.day1;/*
     面向对象
  */
 
