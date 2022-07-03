@@ -11,10 +11,26 @@ public class Car {//类名驼峰式命名，首字母大写，变量名、方法
     // 汽车的长度
     long length;
 
+    /**
+     * @Description 构造器 this关键字
+     * @Author clovenine
+     * @Date 2022/7/3 16:49
+     */
+    public Car(String brand1, String color1, long length1){
+        brand = brand1;
+        this.color = color1;
+        length = length1;
+
+    }
+    public Car(){
+        // this作为构造器只能放在第一行
+        this("baoma", "white", 4321);
+        System.out.println("hello world");
+    }
 
     // 对象的方法-->成员方法
     /**
-     * @Description 启动车
+     * @Description 启动车子
      * @Param
      * @Return java.lang.void
      * @Author clovenine
