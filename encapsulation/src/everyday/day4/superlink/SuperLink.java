@@ -1,4 +1,4 @@
-package everyday.day4;
+package everyday.day4.superlink;
 
 /**
  * @Description 超级链表实现
@@ -33,10 +33,8 @@ public class SuperLink {
         if(index == 0){
             head = head.getNext();
         } else {
-            Node node = head;
-            for(int i = 0; i < index - 1; i++){
-                node = node.getNext();
-            }
+            // 找到下标为index - 1的节点
+            Node node = selectNode(index - 1);
             // 删除的核心
             node.setNext(node.getNext().getNext());
         }
@@ -46,22 +44,24 @@ public class SuperLink {
 
     // 修改下标的元素
     public void set(int index, int data){
-        // 找到下标为index的节点
-        Node node = head;
-        for(int i = 0; i < index; i++){
-            node = node.getNext();
-        }
-        node.setData(data);
+        // 找到下标为index的节点(并修改)
+        selectNode(index).setData(data);
     }
 
-    // 查找数据
+    // 查找数据（返回数据值）
     public Integer select(int index){
+        // 找到下标为index的节点
+        return selectNode(index).getData();
+    }
+
+    // 查找数据（返回节点）//抽理出共有的方法
+    private Node selectNode(int index){
         // 找到下标为index的节点
         Node node = head;
         for(int i = 0; i < index; i++){
             node = node.getNext();
         }
-        return node.getData();
+        return node;
     }
 
     // 获取长度
@@ -94,9 +94,10 @@ public class SuperLink {
             head = node;
         } else {
             // 找到index - 1的节点
-            Node node = head;
+            Node node = selectNode(index - 1);
+                   /* head;
             for(int i = 0; i < index - 1; i++)
-                node = node.getNext();
+                node = node.getNext();*/
 
             // 插入新节点
             Node newNode = new Node(data, null);
@@ -117,9 +118,35 @@ public class SuperLink {
         this.insert(currentIndex + 1, data);
     }
 
-    // 冒泡排序
+    // 冒泡排序 1000个数据 1043ms
     public void sort(){
+        for(int i = 0; i < currentIndex; i++){
+            for(int j = 0; j < currentIndex - i; j++){
+                if(select(j) > select(j + 1)){
+                    int temp = select(j);
+                    selectNode(j).setData(select(j + 1));
+                    selectNode(j + 1).setData(temp);
+                }
+            }
+        }
+    }
 
+    // 冒泡排序 1000个数据 17ms
+    public void sort2(){
+        for(int i = 0; i < currentIndex; i++){
+            Node node = selectNode(0);
+            for(int j = 0; j < currentIndex - i; j++){
+                //node = selectNode(j);
+                if(node.getData() > node.getNext().getData()){
+                    int temp = node.getData();
+                    node.setData(node.getNext().getData());
+                    node.getNext().setData(temp);
+                    /*selectNode(j).setData(select(j + 1));
+                    selectNode(j + 1).setData(temp);*/
+                }
+                node = node.getNext();
+            }
+        }
     }
 
 }

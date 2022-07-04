@@ -1,4 +1,4 @@
-package everyday.day4;
+package everyday.day4.superlink;
 
 /**
  * @Description 超级链表-Node

@@ -1,4 +1,4 @@
-package everyday.day4;
+package everyday.day4.playstring;
 
 /**
  * @Description 统计单词出现次数

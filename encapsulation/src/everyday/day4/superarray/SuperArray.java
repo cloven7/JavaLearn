@@ -1,4 +1,4 @@
-package everyday.day4;
+package everyday.day4.superarray;
 
 /**
  * @Description 封装一个超级数组 一个更好用的数组 新瓶装旧酒
@@ -37,6 +37,34 @@ public class SuperArray {
             elements = temp;
         }
         elements[currentIndex] = data;
+    }
+
+    // 头插
+    public void addToHeader(int data) {
+        this.add(0, data);
+    }
+
+    // 尾插
+    public void addToTail(int data){
+        this.add(currentIndex + 1, data);
+    }
+
+    // 指定下标处增加一个元素
+    public void add(int index, int data){
+        // 游标向前走
+        currentIndex++;
+        // 扩容
+        if(currentIndex > elements.length - 1){
+            int[] temp = new int[elements.length * 2];
+            for(int i = 0; i < elements.length; i++){
+                temp[i] = elements[i];
+            }
+            elements = temp;
+        }
+        for(int i = currentIndex; i > index; i--){
+            elements[i] = elements[i - 1];
+        }
+        elements[index] = data;
     }
 
     // 删除下标的元素

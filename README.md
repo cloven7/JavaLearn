@@ -68,7 +68,7 @@ https://blog.csdn.net/weixin_44076342/article/details/106789384
 (2) playString 构造方法
 (3) String 的内存分析和笔试题
 
-### DAY4
+### DAY4--1
 
 #### 4.1转义符‘\’
 
@@ -84,8 +84,39 @@ https://blog.csdn.net/weixin_44076342/article/details/106789384
 
 #### 4.7快捷键修改“setting”---“Keymap”---“General...”
 
-#### 
+### DAY4--2 基于超级链表(数组)实现栈和队列
 
+#### 4.1超级链表代码优化
 
+#### 4.2超级链表排序(新能对比)
 
+#### 4.3基于超级数组实现队列和栈
+
+(1)栈：先进后出(压栈、弹栈) 桶
+
+(2)队列：先进先出(入队、出队) 排队
+
+#### 4.4基于超级数组实现队列和栈
+
+#### 4.5打包(jar包)
+
+"File"---"Project Structure"---"Artifacts"---"JAR"---"From modules..."
+
+"Build"---"Build Artifacts..."---"选择jar包"---"Build"
+
+"File"---"Project Structure"---"module"---"选择要引入jar包的工程文件"---"+"---"选择jar包"
+
+"META-INF"为指定的main方法
+
+![img.png](image/img.png)
+
+#### 4.6基于队列实现一个银行取票机小系统
+
+#### 4.7修改类名(对着代码里类名按Shift + F6)
+
+(1) [快捷键] 取消缩进(Shift + tab)
+
+### DAY4--3 面向对象之继承
+
+4.1
 

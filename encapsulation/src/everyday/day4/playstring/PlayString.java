@@ -1,4 +1,4 @@
-package everyday.day4;
+package everyday.day4.playstring;
 
 /**
  * @Description 继续玩String
