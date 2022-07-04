@@ -54,6 +54,7 @@ https://blog.csdn.net/weixin_44076342/article/details/106789384
 #### 3.3getter和setter
 
 (1) 别人不能直接修改成员变量，只能通过getter和setter修改
+(2) 快捷键Alt + Insert
 
 #### 3.4写对象的过程
 (1) 第一块内容：成员变量
@@ -66,3 +67,25 @@ https://blog.csdn.net/weixin_44076342/article/details/106789384
 (1) final修饰的变量不能改变
 (2) playString 构造方法
 (3) String 的内存分析和笔试题
+
+### DAY4
+
+#### 4.1转义符‘\’
+
+#### 4.2统计单词出现次数
+
+#### 4.3包装类和自动拆装箱
+
+#### 4.4Integer的笔试题-128到127
+
+#### 4.5超级数组（superArray）
+
+#### 4.6超级链表
+
+#### 4.7快捷键修改“setting”---“Keymap”---“General...”
+
+#### 
+
+
+
+

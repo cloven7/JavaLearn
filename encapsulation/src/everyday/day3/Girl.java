@@ -13,9 +13,10 @@ public class Girl {
     public static void main(String[] args){
         Girl girl = new Girl();
         girl.age = 56;
-        girl.name = "stifen.lili";
+        girl.name = "stifen.lililili";
         char[] girlName = girl.name.toCharArray();
-        String getname = new String(girlName, 7, 4);
+        String getname = new String(girlName);
+        System.out.println(getname.indexOf("lili"));
         System.out.println(getname);
     }
 
