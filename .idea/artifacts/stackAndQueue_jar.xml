@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="stackAndQueue:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/stackAndQueue_jar</output-path>
+    <root id="archive" name="stackAndQueue.jar">
+      <element id="module-output" name="stackAndQueue" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/out/artifacts/encapsulation_jar/encapsulation.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>
