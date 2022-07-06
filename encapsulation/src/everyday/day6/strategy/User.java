@@ -1,7 +1,7 @@
 package everyday.day6.strategy;
 
 /**
- * @Description
+ * @Description 策略设计模式
  * @Author clovenine
  * @Date 2022/7/6 14:13
  */

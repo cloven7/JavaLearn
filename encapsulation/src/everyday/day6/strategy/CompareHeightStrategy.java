@@ -1,7 +1,7 @@
 package everyday.day6.strategy;
 
 /**
- * @Description
+ * @Description 策略设计模式
  * @Param [session]
  * @Return java.lang.String
  * @Throws
