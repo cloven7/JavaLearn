@@ -20,8 +20,11 @@ public class Client {
 
         UserSorter userSorter = new UserSorter();
         Comparator comparator = new CompareAgeStrategy();
-        //comparator = new CompareHeightStrategy();
-        userSorter.sort(users, comparator);
+//        comparator = new CompareHeightStrategy();
+//        userSorter.sort(users, comparator);
+        userSorter.sort(users, (user, other) -> user.getAge() - other.getAge());// 类似语法糖
+        userSorter.sort(users, (user, other) -> (int)(user.getHeight() - other.getHeight()));
+
 
         System.out.println(Arrays.toString(users));
 
