@@ -448,5 +448,42 @@ $ java Client 1 2 3 4 5 参数
 #### 垃圾回收器(小程序，集成在jdk)
 
 
+### DAY7---2 API
+
+- API (Application Programming Interface) 应用程序接口，是一些预先定义的接口。
+- JDK 能够提供给我们使用的类的接口方法
+
+#### Date
+
+#### Calendar
+
+#### simpleDateFormat时间格式化器
+
+#### instance (推荐使用，看实际工作需求)
+
+#### LocalDate详解
+
+Duration(持续时间) 是TemporalAmount(时间量) 的子类。
+
+主要用在instant的日期计算
+
+#### DateTimeFormatter(线程安全的，推荐使用)
+
+
+
+#### Math BigDecimal Random(加种子：一直使用下去就是随机，重复使用种子的生成随机数结果相同)
+
+#### Arrays
+
+
+#### System
+
+#### StringBuilder和StringBuffer***
+
+(1) StringBuffer是线程安全的，效率低。
+
+(2) StringBuilder是非同步的，可以不需要额外的同步于多线程中。
+
+
 
 

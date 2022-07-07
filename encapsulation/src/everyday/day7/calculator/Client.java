@@ -12,6 +12,10 @@ package everyday.day7.calculator;
 public class Client {
 
     public static int f = 0;
+    /**
+     * 这个类能计算加法
+     * @Param
+     */
     public static void juruo(){
         System.out.println("ji tang lai luo !");
     }
