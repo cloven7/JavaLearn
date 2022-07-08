@@ -486,4 +486,17 @@ Duration(持续时间) 是TemporalAmount(时间量) 的子类。
 
 
 
+### DAY8---1 error
+- Throwable 异常的父类
 
+(1) OutOfMemoryError 内存溢出错误
+
+
+(2) StackOverflowError 栈内存溢出错误
+
+
+(3) NoClassDefFoundError 找不到class定义错误
+
+
+### DAY8---2 Exception
+异常链
