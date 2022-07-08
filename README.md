@@ -500,3 +500,57 @@ Duration(持续时间) 是TemporalAmount(时间量) 的子类。
 
 ### DAY8---2 Exception
 异常链
+
+### DAY8---3 泛型，泛型方法
+
+
+### 泛型通配符
+无界 "?"可以接收任何类型
+```java
+    public static void printSuperArray(SuperArray<?> superArray){
+        for (int i = 0;i<superArray.size();i++){
+            System.out.println(superArray.get(i));
+        }
+    }
+```
+
+上界 (SuperArray<? extends Dog> superArray)的形式来约定传入参数的上界，意思就是泛型只能是Dog的或者Dog的子类。
+```java
+    public static void printSuperArray(SuperArray<? extends Dog> superArray){
+        for (int i = 0;i<superArray.size();i++){
+            System.out.println(superArray.get(i));
+        }
+    }
+```
+
+下界  我们可以使用(SuperArray<? super Dog> superArray)的形式来约定传入参数的下界，意思就是泛型只能是Dog的或者Dog的超类
+```java
+    public static void printSuperArray(SuperArray<? super Dog> superArray){
+        for (int i = 0;i<superArray.size();i++){
+            System.out.println(superArray.get(i));
+        }
+    }
+```
+
+
+#### 类型擦除
+
+(1) 泛型不能是基本数据类型
+
+(2) 重载方法，如果泛型类型因为具体的泛型不同而导致方法签名不同，那么以下两个方法就是两重载方法
+
+#### 类型擦除和多态的冲突
+
+父类在类型擦除后，为Object类，子类在继承父类时指定了泛型的具体类型，导致重写的方法看上去是重载，JVM中使用了桥接的方法，找到子类方法中同名的参数为Object方法去实现了重写。
+
+
+#### 静态和泛型
+
+```java
+public class Test<T> {
+	privat T
+	t;
+	private static T s;//会出错，静态常量在类加载时初始化，在static代码块中赋值，但泛型在创建对象或调用方法时明确类型，所以在静态常量中不能使用泛型
+    // 静态方法在调用时传参，可以明确类型
+}
+```
