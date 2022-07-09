@@ -548,9 +548,13 @@ Duration(持续时间) 是TemporalAmount(时间量) 的子类。
 
 ```java
 public class Test<T> {
-	privat T
-	t;
+	privat T t;
 	private static T s;//会出错，静态常量在类加载时初始化，在static代码块中赋值，但泛型在创建对象或调用方法时明确类型，所以在静态常量中不能使用泛型
     // 静态方法在调用时传参，可以明确类型
 }
 ```
+
+### DAY9---1 枚举 enum
+
+#### 静态导入
+
