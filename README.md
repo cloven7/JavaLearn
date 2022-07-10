@@ -739,7 +739,61 @@ public static Object getBlocker(Thread t);
 
 ### DAY10---12 lock锁
 
-(1) synchronized锁
+(1) synchronized锁，内置锁，隐式锁
 
+(2) Lock锁
 
+- Lock接口的几个重要方法
 
+```java
+// 获取锁  
+void lock()   
+
+// 仅在调用时锁为空闲状态才获取该锁，可以响应中断  
+boolean tryLock()   
+
+// 如果锁在给定的等待时间内空闲，并且当前线程未被中断，则获取锁  
+boolean tryLock(long time, TimeUnit unit)   
+
+// 释放锁  
+void unlock()
+
+```
+
+- 获取锁，两种写法
+
+```java
+
+Lock lock = new Lock();
+lock.lock();
+try{
+	
+}catch(Exception ex){
+
+}finally{
+    lock.unlock(); // 释放锁	
+}
+
+```
+
+```java
+
+Lock lock = new Lock();
+		
+if(lock.tryLock()) {
+    try{
+    //处理任务
+    }catch(Exception ex){
+    }finally{
+        lock.unlock();   //释放锁
+    }
+}else {
+//如果不能获取锁，则直接做其他事情
+}
+```
+
+(2.1) ReentrantLock
+
+(2.2) ReentrantReadWriteLock
+
+### DAY11---1 并发编程三大特性
