@@ -558,3 +558,73 @@ public class Test<T> {
 
 #### 静态导入
 
+### DAY10---1 线程创建无返回值的线程
+
+```java
+// 1. 继承Thread类重写run方法
+public class Test extends Thread {
+	@Override
+	public void run() {
+		super.run();
+	}
+}
+
+// 2. 实现Runnable接口
+public class Test implements Runnable {
+	@Override
+	public void run() {
+		System.out.println("实现Runnable接口！");
+	}
+}
+
+// 3. 使用lamdma表达式
+new Thread(() -> System.out.println(4)).start();
+
+```
+
+### DAY10---2 线程创建有返回值的线程
+```java
+// 指定返回值类型，重写call方法
+public class UseCallable implements Callable<Long> {
+```
+
+#### 创建线程的好处、效率和异步
+
+
+### DAY10---3 守护线程
+```java
+Thread t1 = new Thread(
+		() - > {
+			a = a + b;
+        });
+t1.setDaeman(true);
+```
+
+```java
+Thread t1 = new Thread();
+
+t1.start();
+
+t1.join(); // 阻塞当前调用的线程，等该线程先执行完成
+```
+
+
+### DAY10---4 cpu多缓存架构
+
+(1) CPU多核缓存架构
+
+(2) 局部性原理
+
+### DAY10---5 JMM模型中存在的问题
+
+(1) 指令重排，在同一个线程中，没有数据依赖的指令进行重排，但是在多线程中，会出现问题，在这个线程中出现指令重排，另一个线程中出现指令重排，指令执行的结果会导致另一个线程执行的结果发生改变
+
+(2) 内存屏障和对象半初始化
+
+在java语言中使用volatile关键字来保证一个变量在一次读写操作时的避免指令重排，【内存屏障】是在我们的读写操作之前加入一条指令，当CPU碰到这条指令后必须等到前边的指令执行完成才能继续执行下一条指令。
+
+一个对象的半初始化状态
+Dog dog = new Dog();
+new
+invokespecial init
+ldc
