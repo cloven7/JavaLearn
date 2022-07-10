@@ -679,3 +679,67 @@ public volatile static boolean flag = false;
 
  ThreadLocal提供了线程内存储变量的能力，这些变量不同之处在于每一个线程读取的变量是对应的互相独立的。通过get和set方法就可以得到当前线程对应的值。
 
+### DAY10---7 死锁
+
+Java产生死锁的四个必要条件：1.互斥使用 2.不可抢占 3.请求和保持 4.循环等待
+
+当上述四个条件的成立时，便形成死锁。当然，死锁情况下，打破上述任何一个条件，便可以让死锁消失。
+
+#### 锁重入，获取一把锁后，在锁中可以重复进入锁🔒的内容
+
+### DAY10---8 wait 和 notify
+
+(1) wait 会释放锁。
+(2) notify 会唤醒锁，notifyAll唤醒所有锁，等待抢占。
+
+### DAY10---9 线程相关方法总结
+
+方法总结：Thread的两个静态方法：
+
+(1) sleep释放CPU资源，但不释放锁。
+
+(2) yield方法释放了CPU的执行权，但时依然保留了CPU的执行资格。(不常用) // 不恰当的例子：你获取了上厕所的资格，但这时候有一个哥们特别急，划线，重新竞争。
+
+线程实例方法：
+
+(1) join: 是线程的方法，程序会阻塞在这里等待线程执行完毕，才继续往下执行。
+
+(2) interrupt: 打断wait和sleep等阻塞过程，运行过程打断不了
+
+Object的成员方法：
+
+(1) wait: 释放CPU资源，同时释放锁。
+
+(2) notify: 唤醒等待中的线程
+
+(3) notifyAll: 唤醒所有等待的线程
+
+
+
+### DAY10---10 线程退出
+
+使用标志位退出
+
+### DAY10---11 LockSupport
+
+LockSupport 是一个线程阻塞工具类，所有的方法都是静态方法，可以让线程在任意位置阻塞，阻塞之后也有唤醒的方法。
+
+主要有两类方法: park 和 unpark
+
+```java
+public static void park(Object blocker); // 暂停当前线程
+public static void parkNanos(Object blocker, long nanos); // 暂停当前线程，不过有超时时间的限制
+public static void parkUntil(Object blocker, long deadline); // 暂停当前线程，直到某个时间
+public static void park(); // 无期限暂停当前线程
+public static void parkNanos(long nanos); // 暂停当前线程，不过有超时时间的限制
+public static void parkUntil(long deadline); // 暂停当前线程，直到某个时间
+public static void unpark(Thread thread); // 恢复当前线程
+public static Object getBlocker(Thread t);
+```
+
+### DAY10---12 lock锁
+
+(1) synchronized锁
+
+
+
