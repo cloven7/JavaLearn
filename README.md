@@ -804,3 +804,20 @@ if(lock.tryLock()) {
 
 cas深入详解
 compareAndSet 将期望值和
+
+JUnit
+file->p...Stu->library->引包到moudle中
+
+### DAY25--1 IO
+
+
+### DAY25--2 序列化和反序列化
+
+
+### DAY25--3 深拷贝浅拷贝
+
+
+### DAY25--4 大作业：商品的增删改查
+
+
+
