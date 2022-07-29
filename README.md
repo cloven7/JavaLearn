@@ -808,16 +808,69 @@ compareAndSet 将期望值和
 JUnit
 file->p...Stu->library->引包到moudle中
 
-### DAY25--1 IO
+### DAY26--1 IO
 
 
-### DAY25--2 序列化和反序列化
+### DAY26--2 序列化和反序列化
 
 
-### DAY25--3 深拷贝浅拷贝
+### DAY26--3 深拷贝浅拷贝
 
 
-### DAY25--4 大作业：商品的增删改查
+### DAY26--4 大作业：商品的增删改查
 
 
+### DAY27--1 注解
 
+注解的注解为元注解，普通的注解用在方法，类，构造器等地方， 注解可以加参数
+
+注解里可以有抽象方法，类似于接口， 使用注解的地方类似于使用匿名内部类
+
+注解实现起来类似于接口，直接赋值返回值
+
+### DAY27--2 元注解
+
+
+@Target({ElementType.FIELD, ElementType.METHOD})// 只能在字段(成员变量)和方法上使用，限定注解放置的位置（类，构造器上都不能加）
+// TYPE 接口、类上
+
+//SOURCE源代码级别，一旦编译，注解消失，编译（编译器javac）结束后消失
+//CLASS编译后，注解还可以保留到class文件中（默认选项）运行前 jvm加载到内存之后消失
+//RUNTIME保存在内存中，
+
+@Retention(RetentionPolicy.RUNTIME)
+
+
+### DAY27--3 常见注解
+
+1.@Documented 标记这些注解是否包含在用户文档中 Tools -- Generate JavaDoc
+
+2.@Inherited 注解被这个注解，表明这个注解可以被子类继承（仅针对类、成员属性）
+
+3.@Deprecated 所标注的内容，不在被建议使用
+
+4.@SuppressWarnings 压制警告⚠
+
+5.Annotation 的作用，具有让编译器进行编译检查的作用 ：：利用反射，和反射配合使用产生奇妙的化学反应
+
+### DAY27--4 反射（Class对象的获取方式）
+
+// 1.使用类名
+
+Class<Dog> clazz = Dog.class;
+
+
+// 2.使用对象
+
+Class<? extends Dog> clazz2 = dog.getClass();
+
+
+// 3.全限定名称
+
+try {
+	Class<?> clazz3 = Class.forName("everyday.day27.annotations.Dog");
+} catch (ClassNotFoundException e) {
+    e.printStackTrace();
+}
+
+### DAY27--5 反射（操作成员变量，操作方法，构造器，注解 ：： ReflectTest）
